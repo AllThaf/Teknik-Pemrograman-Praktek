@@ -96,7 +96,7 @@ public class PemesananMain {
                         !menu.cekStok(produk, 7) &&
                         !menu.cekStok(produk, 8) &&
                         !menu.cekStok(produk, 9)) {
-                    System.out.println("Seluruh stok sudah habis, terimasik sudah berbelanja\n");
+                    System.out.println("Seluruh stok sudah habis, terimakasih sudah berbelanja\n");
                     index++;
                     pesanLagi = false;
                 } else {
