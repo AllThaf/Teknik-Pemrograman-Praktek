@@ -75,6 +75,8 @@ public class PemesananMain {
                     }
                 }
 
+                // Apabila tidak terindikasi kesamaan pesanan, buat index baru
+                // untuk menampung pesanan
                 if (!beliSama) {
                     penjualan[index] = new Penjualan(produk[pilihMenu - 1].getNama(), pilihQuantity);
                     penjualan[index].totalHarga(produk, pilihMenu, penjualan[index].getQuantity());
