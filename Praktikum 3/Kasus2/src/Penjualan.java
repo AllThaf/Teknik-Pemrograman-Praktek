@@ -8,6 +8,7 @@
 public class Penjualan {
   private String nama;
   private int quantity;
+  private double hargaBarang = 0;
   private double hargaTotal = 0;
 
   /**
@@ -24,15 +25,15 @@ public class Penjualan {
   /**
    * Untuk memproses harga total dari produk yang dibeli
    * Juga memanggil method kurangiStok dari kelas Produk agar stok berkurang
-   * sesuai
-   * dengan quantity yang dibeli
+   * sesuai dengan quantity yang dibeli
    *
    * @param produk
    * @param input
    * @param quantity
    */
-  public void totalHarga(Produk[] produk, int input, int quantity) {
-    hargaTotal += produk[input - 1].getHarga() * getQuantity();
+  public void totalHarga(Produk[] produk, int input, int qty) {
+    setHargaBarang(produk[input - 1].getHarga() * qty);
+    setHargaTotal(hargaTotal += hargaBarang);
     produk[input - 1].kurangiStok(quantity);
   }
 
@@ -58,5 +59,13 @@ public class Penjualan {
 
   public void setHargaTotal(double hargaTotal) {
     this.hargaTotal = hargaTotal;
+  }
+
+  public double getHargaBarang() {
+    return hargaBarang;
+  }
+
+  public void setHargaBarang(double hargaBarang) {
+    this.hargaBarang = hargaBarang;
   }
 }

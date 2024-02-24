@@ -61,12 +61,27 @@ public class PemesananMain {
                     scan.nextLine();
                 }
 
-                penjualan[index] = new Penjualan(produk[pilihMenu - 1].getNama(), pilihQuantity);
-                penjualan[index].totalHarga(produk, pilihMenu, penjualan[index].getQuantity());
-                hargaTotal += penjualan[index].getHargaTotal();
+                // Validasi apakah pembeli memesan barang yang sudah dipesan
+                boolean beliSama = false;
+                for (int i = 0; i < index; i++) {
+                    if (penjualan[i].getNama().equals(produk[pilihMenu - 1].getNama())) {
+                        penjualan[i].totalHarga(produk, pilihMenu, pilihQuantity);
+                        System.out.printf("%nPesanan: %-20s quantity: %-5d Harga: %.1f%n\n", penjualan[i].getNama(),
+                                pilihQuantity, penjualan[i].getHargaBarang());
+                        penjualan[i].setQuantity(pilihQuantity + penjualan[i].getQuantity());
+                        hargaTotal += penjualan[i].getHargaBarang();
+                        index--;
+                        beliSama = true;
+                    }
+                }
 
-                System.out.printf("%nPesanan: %-20s quantity: %-5d Harga: %.1f%n\n", penjualan[index].getNama(),
-                        penjualan[index].getQuantity(), penjualan[index].getHargaTotal());
+                if (!beliSama) {
+                    penjualan[index] = new Penjualan(produk[pilihMenu - 1].getNama(), pilihQuantity);
+                    penjualan[index].totalHarga(produk, pilihMenu, penjualan[index].getQuantity());
+                    hargaTotal += penjualan[index].getHargaTotal();
+                    System.out.printf("%nPesanan: %-20s quantity: %-5d Harga: %.1f%n\n", penjualan[index].getNama(),
+                            penjualan[index].getQuantity(), penjualan[index].getHargaTotal());
+                }
 
                 // Untuk mengecek apakah seluruh produk sudah habis atau belum
                 if (!menu.cekStok(produk, 0) &&
@@ -103,5 +118,7 @@ public class PemesananMain {
                     penjualan[i].getQuantity(), penjualan[i].getHargaTotal());
         }
         System.out.println("Total bayar: " + hargaTotal);
+
+        scan.close();
     }
 }
