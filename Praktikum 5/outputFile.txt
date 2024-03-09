@@ -1,0 +1,37 @@
+******************************************************
+Number of employees working as MANAGER are: 1
+******************************************************
+1. Manager Details:
+Store Details: Gas Store
+Employee Name: John Thor
+Base Pay: $50000.0
+Number of Hours worked: 40.0hrs
+Payment Rate per hour: $20.0/hr
+Total Sales in store: $100000.0
+Sales done: $30000.0
+Percentage of sales done: 30.00%
+Gross Payment: $58420.0
+Remaining store revenue: $27304.200000000008
+******************************************************
+Number of employees working as SALES ASSOCIATES are: 1
+******************************************************
+1. Sales Details:
+Store Details: Store123
+Employee Name: Jane Smith
+Base Pay: $100.0
+Number of Hours worked: 30.0hrs
+Payment Rate per hour: $10.0/hr
+Sales Rate: 100.0%
+Total commission: $10.0
+Gross Payment: $410.0
+******************************************************
+Number of employees working as PART TIME are: 1
+******************************************************
+1. Part time Details:
+Store Details: Store333
+Employee Name: Foo Fighter
+Base Pay: $100.0
+Number of Hours worked: 30.0hrs
+Payment Rate per hour: $10.0/hr
+Hours target per week: 19.0 hours
+Gross Payment: $400.0

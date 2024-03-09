@@ -1,0 +1,22 @@
+Manager
+Gas Store
+John Thor
+50000.0
+40.0
+20.0
+30000.0
+100000.0
+Sales Associate
+Store123
+Jane Smith
+100.0
+30.0
+10.0
+10000.0
+Part Time
+Store333
+Foo Fighter
+100.0
+30.0
+10.0
+19.0
